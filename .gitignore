@@ -8,9 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 dist-ssr
 *.local
+.env
+
 
 # Editor directories and files
 .vscode/*
@@ -22,7 +23,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-VITE_EMAILJS_SERVICE_ID=
-VITE_EMAILJS_TEMPLATE_ID=
-VITE_EMAILJS_PUBLIC_KEY=

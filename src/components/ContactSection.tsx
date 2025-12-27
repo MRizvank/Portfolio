@@ -5,20 +5,22 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Linkedin, Github, ArrowUpRight, Send } from 'lucide-react';
 import { toast } from 'sonner';
+import {sendEmail} from '../lib/mailer'
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' ,phone:"" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    sendEmail(formData);
+   
+  
     
     toast.success('Message sent! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', message: ''  ,phone:" "});
     setIsSubmitting(false);
   };
 
@@ -57,7 +59,7 @@ export function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <Input
-                    placeholder="Your Name"
+                    placeholder="Jhon Doe"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -69,10 +71,22 @@ export function ContactSection() {
                 <div>
                   <Input
                     type="email"
-                    placeholder="Your Email"
+                    placeholder="example@gmail.com"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
+                    }
+                    required
+                    className="bg-background border-border"
+                  />
+                </div>
+                  <div>
+                  <Input
+                    type="text"
+                    placeholder="+91 9876543210"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
                     }
                     required
                     className="bg-background border-border"

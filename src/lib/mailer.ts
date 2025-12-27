@@ -1,0 +1,23 @@
+import emailjs from "@emailjs/browser";
+
+export  const sendEmail = async (formData: {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}) => {
+  try {
+    console.log(formData)
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formData,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    alert("Email sent successfully");
+  } catch (err) {
+    console.error("EmailJS error", err);
+    alert("Failed to send email");
+  }
+};
