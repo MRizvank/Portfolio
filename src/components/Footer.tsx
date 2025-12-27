@@ -12,7 +12,7 @@ export function Footer() {
               <Terminal className="w-4 h-4 text-primary-foreground" />
             </div>
             <span className="text-sm text-muted-foreground">
-              © {currentYear} Rizvan K — Senior Software Engineer (Backend)
+              © {currentYear} Rizvan — Senior Software Engineer (Backend)
             </span>
           </div>
           <div className="flex items-center gap-6">
