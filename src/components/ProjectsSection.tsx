@@ -54,7 +54,7 @@ const liveWebsites = [
     description:
       "A modern website for a biotech company showcasing their products and services.",
     url: "https://krishankhbiotech.com/",
-    tech: ["vite.js", "Tailwind CSS"],
+    tech: ["shadecn/ui", "Tailwind CSS", "React.js", "emailjs"],
   },
   {
     title: "Finsera Ventures",
