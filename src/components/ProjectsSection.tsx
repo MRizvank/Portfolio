@@ -34,7 +34,7 @@ const projects = [
   },
   {
     icon: ShoppingBag,
-    title: "Affiliate Platform — SnapGizmo",
+    title: "Affiliate Platform SnapGizmo",
     description:
       "Backend APIs for digital product affiliates with data tracking and system structure.",
     tech: ["Node.js", "MongoDB"],
